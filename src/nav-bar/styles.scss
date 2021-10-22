@@ -1,0 +1,29 @@
+.body {
+
+}
+.nav-orange-bg {
+    background-color: rgb(255, 136, 0) !important;
+}
+.logo {
+    background-image: url("MerkartLogo.jpeg");
+    background-size: 100px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    color: pink;
+    border-radius: 100px;
+}
+.link-color{
+    color: white;
+    .nav-link:hover{
+        color: #985a27;
+    }
+    :visited{
+        color: #ffa569;
+
+    }
+    :active{
+        color: #985a27;
+
+    }
+}
