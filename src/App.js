@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //import Store from "./store/Store";
 
 import {NavBar} from "./nav-bar/NavBar";
+import {Payment} from "./payment/Payment";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
   return (
      // <Store>
       <div>
-      <NavBar/>
+
         <Router>
           <div>
 
@@ -35,6 +36,9 @@ function App() {
               </Route>
               <Route path="/recomendaciones">
                 <Recomendaciones />
+              </Route>
+              <Route path="/payment">
+                <Payment />
               </Route>
             </Switch>
           </div>
