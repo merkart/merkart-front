@@ -1,3 +1,30 @@
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/mixins/_breakpoints';
 .content-app{
-    margin-top:130px;
+   // margin-top:130px;
+ @include media-breakpoint-only(xs) {
+    margin-top:140px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top:140px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top:140px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top:140px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top:140px;
+  }
+  @include media-breakpoint-only(xxl) {
+    margin-top:140px;
+  }
+
+}
+.generic-button-1{
+  margin-top: 60px;
+  background-color: #e2c275;
+  right:    0px;
 }

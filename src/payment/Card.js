@@ -21,7 +21,7 @@ export const Card = () => {
 
     return (
         <div className="col-12 mt-4" id="PaymentForm">
-            <Col ><Cards
+            <Col><Cards
 
                 cvc={data.cvc}
                 expiry={data.expiry}
@@ -30,29 +30,21 @@ export const Card = () => {
                 number={data.number}
             /></Col>
 
-            <div className="col-12 mt-5">
-                <Row>
-                    <Col></Col>
+            <div className="col-12 mt-5  ">
+                <Row className={"justify-content-center mx-1"}>
+
                     <Col className="" xs={9}>
                         <form action="">
                             <Row>
-                                <Col>
-                                    <Form.Control
+                                <Col> <Form.Control
+                                    type="number"
+                                    name="number"
+                                    placeholder="Card Number"
+                                    onChange={handleInputChange}
+                                /></Col>
 
-                                        type="number"
-                                        name="cvc"
-                                        placeholder="CVC"
-                                        onChange={handleInputChange}
-                                    />
-                                </Col>
-                                <Col>
-                                    <Form.Control type="date"
-                                                  name="expiry"
-                                                  placeholder="Expire Date"
-                                                  onChange={handleInputChange}
-                                    />
-                                </Col>
-
+                            </Row>
+                            <Row className={"mt-4"}>
                                 <Col>
                                     <Form.Control
                                         type="text"
@@ -62,17 +54,30 @@ export const Card = () => {
                                     />
                                 </Col>
 
-                                <Col> <Form.Control
-                                    type="number"
-                                    name="number"
-                                    placeholder="Card Number"
-                                    onChange={handleInputChange}
-                                /></Col>
+                            </Row>
+                            <Row className={"mt-4"}>
+
+                                <Col xs={6}>
+                                    <Form.Control
+
+                                        type="number"
+                                        name="cvc"
+                                        placeholder="CVC"
+                                        onChange={handleInputChange}
+                                    />
+                                </Col>
+                                <Col xs={6}>
+                                    <Form.Control type="date"
+                                                  name="expiry"
+                                                  placeholder="Expire Date"
+                                                  onChange={handleInputChange}
+                                    />
+                                </Col>
 
                             </Row>
                         </form>
                     </Col>
-                    <Col></Col>
+
                 </Row>
 
             </div>
