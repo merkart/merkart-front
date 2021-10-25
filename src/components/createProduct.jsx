@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
+
 const CreateProduct = (props) => {
 
     const [product, setProduct] = useState({
@@ -20,13 +21,13 @@ const CreateProduct = (props) => {
 
     const addNewProduct = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8080/product',{product})
+        axios.post('http://localhost:8080/product', {product})
             .then((response) => response)
             .then(window.location.reload)
     }
 
 
-    return(
+    return (
         <div>
             <form onSubmit={addNewProduct}>
                 <label for="productName">¿Cómo se llama tu producto?</label>
