@@ -3,10 +3,10 @@
     align-content: center;
 }
 .cuadrado {
-    height: 500px;
+    height: 450px;
     margin-top: 100px;
     margin-bottom: auto;
-    width: 500px;
+    width: 400px;
     border: #e2c275;
     background-color:#c36a2d;
 }
@@ -19,10 +19,10 @@
     color:  #e2c275;
     border-radius: 100px;
     margin-top: 20px;
-    margin-left: 230px;
+    margin-left: 150px;
 }
 .Titulo1 {
-    margin-top: 30px;
+    margin-top: 20px;
     color: #e2c275;
     font: oblique bold 150% cursive
 }
@@ -31,25 +31,29 @@ h3{
     margin-top: 20px;
     font-size: 20px;
     color: #e2c275;
-    margin-left:150px;
+    margin-left:100px;
 }
 .Usuario{
-    margin-left: 150px;
+    margin-left: 100px;
     margin-top: 20px;
 }
 .Contraseña{
-    margin-left:150px;
+    margin-left:100px;
     margin-top: 10px;
 }
-
-.BotonL{
-    color: #e2c275;
-    margin-top: 20px;
+.Olvido {
     margin-left: 100px;
+}
+.BotonRegistro{
+    color: #e2c275;
+    margin-top: 10px;
+    margin-left: 10px;
     font: oblique bold 110% cursive
 }
+.BotonInicio{
+    color: #e2c275;
+    margin-left: 10px;
+    margin-top: 10px;
+    font: oblique bold 110% cursive
 
-
-.Olvido {
-    margin-left: 170px;
 }

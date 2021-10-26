@@ -1,5 +1,5 @@
 import "./Login.css"
-import {login, Container, NavDropdown, Button, Offcanvas} from 'react-bootstrap';
+import {login, Container, NavDropdown, Button, Offcanvas, Row, Col} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 export const Login=({}) => {
     return(
@@ -21,9 +21,18 @@ export const Login=({}) => {
                             <input type="password" placeholder="Contraseña"/>
                         </div>
                         <a  className="Olvido" href="">¿Olvido su contraseña?</a>
-                        <div className="BotonL">
-                                <button className="BotonL">Entrar</button>
-                        </div>
+                        <Row>
+                            <Col>
+                                <div className="BotonRegistro">
+                                    <button className="BotonRegistro">Registrarme</button>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="BotonInicio">
+                                    <button className="BotonInicio">Iniciar Sesion</button>
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
                 </div>
             </div>
