@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
+import {SearchPage} from "./search/SearchPage";
 
 function App() {
 
@@ -39,6 +40,9 @@ function App() {
               </Route>
               <Route path="/payment">
                 <Payment />
+              </Route>
+              <Route path="/searchpage">
+                <SearchPage />
               </Route>
             </Switch>
           </div>
