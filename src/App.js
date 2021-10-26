@@ -2,12 +2,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
-//import Store from "./store/Store";
 
-import {Login} from "./Login/Login";
+import {RegistroPersona} from "./RegistroPersona/RegistroPersona";
 
 function App() {
 
@@ -18,8 +16,8 @@ function App() {
         <Router>
           <div>
             <Switch>
-              <Route path="/Login">
-                <Login  />
+              <Route path="/RegistroPersona">
+                <RegistroPersona />
               </Route>
             </Switch>
           </div>
