@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
 import CreateProduct from "./components/CreateProduct";
+import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
 
 function App() {
 
@@ -17,11 +18,14 @@ function App() {
   return (
      // <Store>
       <div>
+
         <Router>
           <div>
+
+
             <Switch>
               <Route path="/carrito/:id">
-                <Carrito/>
+                <ShoppingCart/>
               </Route>
               <Route path="/crearProducto">
                 <CreateProduct/>
