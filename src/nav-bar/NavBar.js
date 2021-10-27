@@ -27,7 +27,7 @@ export const NavBar = ()=>{
                     <Nav className="me-auto mx-5">
                         <SearchBar/>
 
-                        <Nav.Link className="link-color" href="#home">Home</Nav.Link>
+                        <Nav.Link className="link-color" href="/">Home</Nav.Link>
                         <Nav.Link className="link-color" href="/carrito">carrito de compras</Nav.Link>
                         <Nav.Link className="link-color" href="/historial">Historial</Nav.Link>
                         <Nav.Link className="link-color" href="/categorias">Categorias</Nav.Link>
