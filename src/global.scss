@@ -27,4 +27,15 @@
   margin-top: 60px;
   background-color: #e2c275;
   right:    0px;
+  &:hover{
+    background-color: rgb(255, 136, 0);
+  }
+  &:focus{
+    background-color: rgb(206, 116, 0);
+  }
+}
+
+.container{
+  border: grey;
+  border-radius: 5px;
 }
