@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
 import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
+import {Home} from "./Home/pages/Home";
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
 
 
             <Switch>
+              <Route path="/Home">
+                <Home   />
+              </Route>
               <Route path="/carrito/:id">
                 <ShoppingCart   />
               </Route>
