@@ -9,7 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
+
+import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
+
 import {SearchPage} from "./search/SearchPage";
+
 
 function App() {
 
@@ -24,7 +28,7 @@ function App() {
 
             <Switch>
               <Route path="/carrito/:id">
-                <Carrito   />
+                <ShoppingCart   />
               </Route>
               <Route path="/historial/:id" >
                 <Historial />
@@ -41,9 +45,11 @@ function App() {
               <Route path="/payment">
                 <Payment />
               </Route>
+
               <Route path="/searchpage">
                 <SearchPage />
               </Route>
+
             </Switch>
           </div>
         </Router>
