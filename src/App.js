@@ -13,6 +13,9 @@ import {Payment} from "./payment/Payment";
 import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
 
 import {SearchPage} from "./search/SearchPage";
+import Login from "./Login/Login";
+import RegistryPerson from "./RegistryPerson/RegistryPerson";
+import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
 
 
 function App() {
@@ -21,12 +24,12 @@ function App() {
   return (
      // <Store>
       <div>
-
         <Router>
           <div>
-
-
             <Switch>
+              <Route path="/">
+                <Login/>
+              </Route>
               <Route path="/carrito/:id">
                 <ShoppingCart   />
               </Route>
@@ -45,9 +48,14 @@ function App() {
               <Route path="/payment">
                 <Payment />
               </Route>
-
               <Route path="/searchpage">
                 <SearchPage />
+              </Route>
+              <Route path="/Registry">
+                <RegistryPerson/>
+              </Route>
+              <Route path="/RegistryArtesan">
+                <RegistryArtesan />
               </Route>
 
             </Switch>
