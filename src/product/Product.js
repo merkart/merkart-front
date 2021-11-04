@@ -17,7 +17,6 @@ export const Product = ({productitem}) => {
     return (
 
         <div className={"d-flex justify-content-center mt-5"}>
-
             <Card style={{width: '60%', height:"25%" }}>
                 <Row>
                     <Col>
@@ -39,8 +38,6 @@ export const Product = ({productitem}) => {
                 </Row>
 
             </Card>
-
-
         </div>
 
 
