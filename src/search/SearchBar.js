@@ -9,72 +9,17 @@ import {ProductSearch} from "./ProductSearch";
 
 function SearchBar() {
 
-  const [productos, setProductos]= useState([{
-      id:"1",
-      name:"patata",
-      artisanId:"2",
-      description:"Sombrero hecho por... ",
-
-
-      cost:"15000",
-      placeOfCreation:"Bogotá",
-      createdAt:"27-10-2021",
-      isSelected:"true",
-      img:"https://m.media-amazon.com/images/I/517AaC2FOoL._AC_UX385_.jpg",
-      quantity:"2",
-      Category:"Sombrerpos"
-},{
-  id:"1",
-      name:"otro items",
-      artisanId:"2",
-      description:"jaja xd",
-      img:"https://m.media-amazon.com/images/I/517AaC2FOoL._AC_UX385_.jpg",
-
-      cost:"15000",
-      placeOfCreation:"Bogotá",
-      createdAt:"27-10-2021",
-      isSelected:"true",
-
-      quantity:"2",
-      Category:"otroitems2"}
-  ]);
-  const [tablaProductos, setTablaProductos]= useState([{
-    id:"1",
-    name:"patata",
-    artisanId:"2",
-    description:"Sombrero hecho por...",
-
-
-    cost:"15000",
-    placeOfCreation:"Bogotá",
-    createdAt:"27-10-2021",
-    isSelected:"true",
-    img:"https://m.media-amazon.com/images/I/517AaC2FOoL._AC_UX385_.jpg",
-    quantity:"2",
-    Category:"Sombrerpos"
-  },{
-    id:"1",
-    name:"otro items",
-    artisanId:"2",
-    description:"jaja xd",
-    img:"https://m.media-amazon.com/images/I/517AaC2FOoL._AC_UX385_.jpg",
-
-    cost:"15000",
-    placeOfCreation:"Bogotá",
-    createdAt:"27-10-2021",
-    isSelected:"true",
-
-    quantity:"2",
-    Category:"otroitems2"
-  }
-  ]);
+  const [productos, setProductos]= useState();
+  const [tablaProductos, setTablaProductos]= useState();
   const [busqueda, setBusqueda]= useState("");
   //setTablaProductos(productos);
 
 const peticionGet=async()=>{
-  await axios.get("https://merkart-dev.herokuapp.com/product")
+  await axios.get("https://merkart.herokuapp.com/product")
   .then(response=>{
+    console.log(response,"hol")
     setProductos(response.data);
+
     setTablaProductos(response.data);
   }).catch(error=>{
     console.log(error);
