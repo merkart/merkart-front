@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {Dropdown} from "react-bootstrap";
+
 import "../../RegistryArtesan/RegistryArtesan.scss"
+
 
 export const TypeOfId = (props) => {
 
@@ -24,8 +26,10 @@ export const TypeOfId = (props) => {
     ])
 
     const [dropdownSelect, setDropdownSelect] = useState({
+
             name: 'Seleccione el tipo de ID',
             description: 'Seleccione el tipo de ID'
+
         }
     )
 
@@ -36,7 +40,9 @@ export const TypeOfId = (props) => {
     return (
         <div>
             <Dropdown className="m-3">
+
                 <Dropdown.Toggle  variant="light " id="dropdown-basic"/*style={{background:`White`}}*/>
+
                     {dropdownSelect.name}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>

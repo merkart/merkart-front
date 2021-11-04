@@ -1,6 +1,10 @@
+
 import "./RegistryArtesan.scss"
 import ciclesImg from '../Home/assets/img/circles.png'
 import {registroA, Row, Col} from 'react-bootstrap';
+
+import "./RegistryArtesan.css"
+
 import {Button, Card, Form} from 'react-bootstrap';
 import {TypeOfId} from "../components/artisanProfile/TypeOfId";
 import {CountryDropdown, RegionDropdown} from "react-country-region-selector";
@@ -45,7 +49,6 @@ export const RegistroArtesano = ({}) => {
     }
 
 
-
     return (
         <registroA>
             <div className="container">
@@ -68,19 +71,23 @@ export const RegistroArtesano = ({}) => {
 
 
 
+
                         <Card className="cardReg" style={{
                             backgroundImage:`url(${ciclesImg}), linear-gradient(to right, #EF962D, #9C5518)`
                         }}>
                             <Form onSubmit={addNewArtisan}>
                                 
                                 <TypeOfId className="TipoID"/>
+
                                 <Form.Group className="m-3" controlId="numberId">
                                     <Form.Control placeholder="Numero de Identificacion" type="text" name="idNumber" id="idNumber" onChange={handleTextChange}/>
                                 </Form.Group>
                                 <Form.Group className="m-3" controlId="phone">
                                     <Form.Control placeholder="Celular" type="text" name="phone" id="phone" onChange={handleTextChange}/>
                                 </Form.Group>
+
                                 <div className="selectCountry">
+
                                     <CountryDropdown className="country-select-dropdown "
                                                      value={artisan.country}
                                                      onChange={(val) => selectCountry(val)}/>
@@ -99,7 +106,9 @@ export const RegistroArtesano = ({}) => {
                         </Card>
                         <div>
                             <div className="BotonContinuar">
+
                                 <Button className={"generic-button-1 m-3 "} style={{background:`#5A3F11`}} variant="primary" type="submit" >
+
                                     Registrarse
                                 </Button>
                             </div>
