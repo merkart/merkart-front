@@ -13,6 +13,7 @@ import {SearchPage} from "./search/SearchPage";
 import Login from "./Login/Login";
 import RegistryPerson from "./RegistryPerson/RegistryPerson";
 import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
+import {EditArtisanProfile} from "./components/artisanProfile/EditArtisanProfile";
 
 
 function App() {
@@ -57,7 +58,10 @@ function App() {
                 <RegistryPerson/>
               </Route>
               <Route path="/RegistryArtesan">
-                <RegistryArtesan />
+                <RegistryArtesan/>
+              </Route>
+              <Route path="/editArtisan">
+                <EditArtisanProfile/>
               </Route>
               <Route path="/">
                 <Login/>
