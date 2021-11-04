@@ -13,6 +13,7 @@ import {SearchPage} from "./search/SearchPage";
 import Login from "./Login/Login";
 import RegistryPerson from "./RegistryPerson/RegistryPerson";
 import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
+import { Categories } from "./Categories/pages/Categories";
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             <Switch>
               <Route path="/Home">
                 <Home/>
+              </Route>
+              <Route path="/Categories">
+                <Categories/>
               </Route>
               <Route path="/carrito/:id">
                 <ShoppingCart/>

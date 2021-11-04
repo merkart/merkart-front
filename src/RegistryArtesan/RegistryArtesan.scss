@@ -4,7 +4,7 @@
     padding-bottom: 50px;
 }
 .cuadradoRegArt {
-    height: 970px;
+    height: 710px;
     margin-top: 40px;
     margin-bottom: auto;
     width: 400px;
@@ -12,6 +12,21 @@
     background-color:linear-gradient(to right, #EF962D, #9C5518);
     opacity: 0.85;
     
+}
+
+.selectCountry{
+    margin-left: 15px;
+    
+}
+
+.TipoID{
+    background-color: white;
+    color: #5A3F11;
+}
+
+.cardReg{
+    margin-top: auto;
+    background-color:linear-gradient(to right, #EF962D, #9C5518);
 }
 .Logo{
     background-image: url("Logo.jpeg");
