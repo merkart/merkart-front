@@ -11,13 +11,13 @@ const CreateProduct = (props) => {
     const history = useHistory();
     const [product, setProduct] = useState(
         {
-            productName: 'Manilla de colores',
+            name: 'Manilla de colores',
             description: 'Una manilla de colores',
-            cost: '5000',
-            quantity: '1',
+            cost: 5000,
+            quantity: 1,
             urlImage: '',
             urlVideo: '',
-            artisanId: '1',
+            artisanId: '614c209e2659a63de4955b98',
             placeOfCreation: '',
             Category: '',
             isSelected: false,
@@ -39,7 +39,14 @@ const CreateProduct = (props) => {
             [event.target.name]: value
         });
     }
-
+    const handlenumberchange = (event) => {
+        const value = event.target.value;
+        console.log(value)
+        setProduct({
+            ...product,
+            [event.target.name]: parseInt(value)
+        });
+    }
     const handleImageChange = (event) => {
         setProduct({
             ...product,
@@ -48,16 +55,24 @@ const CreateProduct = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post({
-                method: 'post',
-                url: " https://merkart.herokuapp.com/product/insert/" + product.artisanId,
-                headers: {},
-                data: {
-                    productDto: product, // This is the body part
-                }
-            }
-        )
+
+       // console.log(productin,'productins',product)
+        axios.post('https://merkart.herokuapp.com/artisan/product/insert/\'+product.artisanId'
+            ,product)
+         /*axios({ method: 'post',
+            url: 'https://merkart.herokuapp.com/artisan/product/insert/'+product.artisanId,
+            data: {
+                product,
+
+            },
+             headers: {
+                 'Content-Type': 'multipart/form-data',
+             },
+         })*/
+
+
             .then(response => {
+                console.log(response)
                 history.push('/')
 
                 return response;
@@ -84,7 +99,7 @@ const CreateProduct = (props) => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="m-3" >
                                 <Form.Label>¿Cómo se llama tu producto?</Form.Label>
-                                <Form.Control type="text" name="productName2" id="productName1"
+                                <Form.Control type="text" name="name" id="productName"
                                               onChange={handleTextChange}/>
                             </Form.Group>
                             <CategorySelect/>
@@ -96,20 +111,20 @@ const CreateProduct = (props) => {
                             </Form.Group>
                             <Form.Group className="m-3" controlId="cost">
                                 <Form.Label>Costo</Form.Label>
-                                <Form.Control type="text" name="cost2" onChange={handleTextChange}/>
+                                <Form.Control type="number" name="cost" onChange={handlenumberchange}/>
                             </Form.Group>
                             <Form.Group className="m-3" controlId="quantity">
-                                <Form.Label>Costo</Form.Label>
-                                <Form.Control type="number" name="quantity2" onChange={handleTextChange}/>
+                                <Form.Label>quantity</Form.Label>
+                                <Form.Control type="number" name="quantity" onChange={handlenumberchange}/>
                             </Form.Group>
                             <Form.Group className="m-3" controlId="urlImage">
                                 <Form.Label>Url Imagen:</Form.Label>
-                                <Form.Control type="file" name="urlImage2" onChange={handleImageChange}/>
+                                <Form.Control type="file" name="urlImage" onChange={handleImageChange}/>
                                 <img className="mt-3" src={product.urlImage} alt="urlImage" width="600"/>
                             </Form.Group>
                             <Form.Group className="m-3" controlId="urlVideo">
                                 <Form.Label>Url Video:</Form.Label>
-                                <Form.Control type="text" name="urlVideo2" onChange={handleTextChange}/>
+                                <Form.Control type="text" name="urlVideo" onChange={handleTextChange}/>
                             </Form.Group>
                             <ReactPlayer className="m-3" url={product.urlVideo} width="600"/>
                             <Button  className={"generic-button-1 m-3"} variant="primary"

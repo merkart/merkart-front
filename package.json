@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.16.0",
     "sass": "^1.43.3"
   }
 }

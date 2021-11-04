@@ -5,10 +5,12 @@ export const CategorySelect = (props) => {
 
     const [category, setCategory] = useState([
         {
+            id:'1',
             name: 'Accesorios',
             description: 'accesorios',
         },
         {
+            id:'2',
             name: 'Sombreros',
             description: 'sombreros',
         }
@@ -33,7 +35,7 @@ export const CategorySelect = (props) => {
                 <Dropdown.Menu>
                     {
                         category.map(item => (
-                            <Dropdown.Item onClick={() => handleClick(item)}>{item.name}</Dropdown.Item>
+                            <Dropdown.Item id={item.id} onClick={() => handleClick(item)}>{item.name}</Dropdown.Item>
                         ))
                     }
                 </Dropdown.Menu>
