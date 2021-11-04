@@ -1,19 +1,11 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 //import Store from "./store/Store";
-
-import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
 
 import CreateProduct from "./components/create_product/CreateProduct";
 import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
 import {TotalProduct} from "./components/total_product/TotalProduct";
-import {UserRegistry} from "./components/user_registry/UserRegistry";
 
 import {Home} from "./Home/pages/Home";
 
@@ -23,23 +15,16 @@ import RegistryPerson from "./RegistryPerson/RegistryPerson";
 import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
 
 
-
 function App() {
 
 
   return (
-     // <Store>
       <div>
         <Router>
           <div>
             <Switch>
-
               <Route path="/Home">
-                <Home   />
-
-              <Route path="/">
-                <Login/>
-
+                <Home/>
               </Route>
               <Route path="/carrito/:id">
                 <ShoppingCart/>
@@ -47,7 +32,7 @@ function App() {
               <Route path="/crearProducto">
                 <CreateProduct/>
               </Route>
-              <Route path="/historial/:id" >
+{/*              <Route path="/historial/:id" >
                 <Historial />
               </Route>
               <Route path="/categorias" >
@@ -58,18 +43,13 @@ function App() {
               </Route>
               <Route path="/recomendaciones">
                 <Recomendaciones />
-              </Route>
+              </Route>*/}
               <Route path="/payment">
                 <Payment />
               </Route>
-
               <Route path="/product/:id">
                 <TotalProduct/>
               </Route>
-              <Route path="/user/:id">
-                <UserRegistry/>
-              </Route>
-
               <Route path="/searchpage">
                 <SearchPage />
               </Route>
@@ -79,13 +59,13 @@ function App() {
               <Route path="/RegistryArtesan">
                 <RegistryArtesan />
               </Route>
-
-
+              <Route path="/">
+                <Login/>
+              </Route>
             </Switch>
           </div>
         </Router>
       </div>
-     // </Store>
   );
 }
 function Carrito() {
