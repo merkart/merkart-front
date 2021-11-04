@@ -47,6 +47,7 @@ const CreateProduct = (props) => {
         })
     }
     const handleSubmit = (event) => {
+        event.preventDefault();
         axios.post({
                 method: 'post',
                 url: " https://merkart.herokuapp.com/product/insert/" + product.artisanId,
@@ -81,9 +82,9 @@ const CreateProduct = (props) => {
                 <Col className="mt-0">
                     <Card className="mt-3" style={{width: '40rem'}}>
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group className="m-3" controlId="productName">
+                            <Form.Group className="m-3" >
                                 <Form.Label>¿Cómo se llama tu producto?</Form.Label>
-                                <Form.Control type="text" name="productName" id="productName"
+                                <Form.Control type="text" name="productName2" id="productName1"
                                               onChange={handleTextChange}/>
                             </Form.Group>
                             <CategorySelect/>
@@ -95,23 +96,23 @@ const CreateProduct = (props) => {
                             </Form.Group>
                             <Form.Group className="m-3" controlId="cost">
                                 <Form.Label>Costo</Form.Label>
-                                <Form.Control type="text" name="cost" onChange={handleTextChange}/>
+                                <Form.Control type="text" name="cost2" onChange={handleTextChange}/>
                             </Form.Group>
                             <Form.Group className="m-3" controlId="quantity">
                                 <Form.Label>Costo</Form.Label>
-                                <Form.Control type="number" name="quantity" onChange={handleTextChange}/>
+                                <Form.Control type="number" name="quantity2" onChange={handleTextChange}/>
                             </Form.Group>
                             <Form.Group className="m-3" controlId="urlImage">
                                 <Form.Label>Url Imagen:</Form.Label>
-                                <Form.Control type="file" name="urlImage" onChange={handleImageChange}/>
+                                <Form.Control type="file" name="urlImage2" onChange={handleImageChange}/>
                                 <img className="mt-3" src={product.urlImage} alt="urlImage" width="600"/>
                             </Form.Group>
-                            <Form.Group className="m-3" controlId="urlImage">
+                            <Form.Group className="m-3" controlId="urlVideo">
                                 <Form.Label>Url Video:</Form.Label>
-                                <Form.Control type="text" name="urlVideo" onChange={handleTextChange}/>
+                                <Form.Control type="text" name="urlVideo2" onChange={handleTextChange}/>
                             </Form.Group>
                             <ReactPlayer className="m-3" url={product.urlVideo} width="600"/>
-                            <Button onSubmit={handleSubmit()} className={"generic-button-1 m-3"} variant="primary"
+                            <Button  className={"generic-button-1 m-3"} variant="primary"
                                     type="submit">
                                 Crear
                             </Button>
