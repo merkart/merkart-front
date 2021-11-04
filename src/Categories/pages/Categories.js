@@ -11,6 +11,7 @@ export const Categories = () => {
     return (
         <div>
             <NavBar/>
+            <Sentence/>
             <div>
                 <Card/>
             </div>

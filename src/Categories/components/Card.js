@@ -1,8 +1,13 @@
 import React from "react";
 import ciclesImg from '../assets/img/circles.png'
-import category from '../assets/img/categorias.png'
-import history from '../assets/img/historias.png'
-import recomen from '../assets/img/recomendaciones.png'
+
+import bolsos from '../assets/img/Bolsos.PNG'
+import sombreros from '../assets/img/Sombreros.PNG'
+import canastos from '../assets/img/Canastos.PNG'
+import accesorios from '../assets/img/Accesorios.PNG'
+import vasijas from '../assets/img/Vasijas.PNG'
+import otros from '../assets/img/Otros.PNG'
+
 import { Link } from 'react-router-dom'
 import tarea from '../assets/img/Tarea.png'
 
@@ -20,12 +25,12 @@ render(){
                     <div className="card.body">
                         <div className="row center">
                             <div className="col-6">
-                                <Link to="/categorias">
-                                    <img src={category} className="img float-right"/>
+                                <Link to="/bolsos">
+                                    <img src={bolsos} className="img float-right"/>
                                 </Link>
                             </div>
                                 <div className="col-6 Market-Card-Info"  >
-                                <Link to="/categorias">
+                                <Link to="/bolsos">
                                     <h1>Bolsos</h1>
                                 </Link>
                                     <p>Bolsos coloridos, de todos los tamaños</p>
@@ -43,12 +48,12 @@ render(){
                     <div className="card.body">
                         <div className="row center">
                             <div className="col-6">
-                                <Link to="/historias">
-                                    <img src={history} className="img float-right"/>
+                                <Link to="/sombreros">
+                                    <img src={sombreros} className="img float-right"/>
                                 </Link>
                             </div>
                             <div className="col-6 Market-Card-Info"  >
-                                <Link to="/historias">
+                                <Link to="/sombreros">
                                     <h1>Sombreros</h1>
                                 </Link>
                                 <p>Sombreros elegantes y de alta calidad</p>
@@ -66,15 +71,15 @@ render(){
                     <div className="card.body">
                         <div className="row center">
                             <div className="col-6">
-                                <Link to="/recomendaciones">
-                                    <img src={recomen} className="img float-right"/>
+                                <Link to="/canastos">
+                                    <img src={canastos} className="img float-right"/>
                                 </Link>
                             </div>
                             <div className="col-6 Market-Card-Info"  >
-                                <Link to="/recomendaciones">
+                                <Link to="/canastos">
                                     <h1>Canastos</h1>
                                 </Link>
-                                <p>Canastos para cuaquier uso</p>
+                                <p>Canastos hechos a mano para cuaquier uso</p>
                             </div>
                         </div>
                     </div>
@@ -93,12 +98,12 @@ render(){
                     <div className="card.body">
                         <div className="row center">
                             <div className="col-6">
-                                <Link to="/historias">
-                                    <img src={history} className="img float-right"/>
+                                <Link to="/accesorios">
+                                    <img src={accesorios} className="img float-right"/>
                                 </Link>
                             </div>
                             <div className="col-6 Market-Card-Info"  >
-                                <Link to="/historias">
+                                <Link to="/accesorios">
                                     <h1>Accesorios</h1>
                                 </Link>
                                 <p>Llaveros, collares, aretes, pulseras y más</p>
@@ -117,15 +122,15 @@ render(){
                     <div className="card.body">
                         <div className="row center">
                             <div className="col-6">
-                                <Link to="/historias">
-                                    <img src={history} className="img float-right"/>
+                                <Link to="/vasijasYEsculturas">
+                                    <img src={vasijas} className="img float-right"/>
                                 </Link>
                             </div>
                             <div className="col-6 Market-Card-Info"  >
-                                <Link to="/historias">
+                                <Link to="/vasijasYEsculturas">
                                     <h1>Vasijas y Esculturas</h1>
                                 </Link>
-                                <p>Dale estilo a tu hogar</p>
+                                <p>Dale estilo a tu hogar con las mejores obras</p>
                             </div>
                         </div>
                     </div>
@@ -147,12 +152,12 @@ render(){
                     <div className="card.body">
                         <div className="row center">
                             <div className="col-6">
-                                <Link to="/historias">
-                                    <img src={history} className="img float-right"/>
+                                <Link to="/otros">
+                                    <img src={otros} className="img float-right"/>
                                 </Link>
                             </div>
                             <div className="col-6 Market-Card-Info"  >
-                                <Link to="/historias">
+                                <Link to="/otros">
                                     <h1>Otros</h1>
                                 </Link>
                                 <p>Si no lo encuentras, está acá</p>

@@ -1,12 +1,13 @@
 import React from 'react'
-import './styles/Sentence.css'
+import './styles/SentenceCat.scss'
 
 export const Sentence = () => (
     <div className='mx-auto'>
         <div className="">
-            <div className="Task-User-Info">
-                <h1>Hola Bro... arregar el texto que debería aparecer!</h1>
-                <p>Nahhhh es mentiras... o no</p>
+            <div className="text Task-User-Info CategoriesText">
+                <h1>...</h1>
+                <h1>Categorías</h1>
+                <h1>...</h1>
             </div>
         </div>
     </div>
