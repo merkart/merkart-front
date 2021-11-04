@@ -9,8 +9,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
+
 import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
 import {Home} from "./Home/pages/Home";
+
+import {SearchPage} from "./search/SearchPage";
+import Login from "./Login/Login";
+import RegistryPerson from "./RegistryPerson/RegistryPerson";
+import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
+
 
 function App() {
 
@@ -18,14 +25,16 @@ function App() {
   return (
      // <Store>
       <div>
-
         <Router>
           <div>
-
-
             <Switch>
+
               <Route path="/Home">
                 <Home   />
+
+              <Route path="/">
+                <Login/>
+
               </Route>
               <Route path="/carrito/:id">
                 <ShoppingCart   />
@@ -44,6 +53,15 @@ function App() {
               </Route>
               <Route path="/payment">
                 <Payment />
+              </Route>
+              <Route path="/searchpage">
+                <SearchPage />
+              </Route>
+              <Route path="/Registry">
+                <RegistryPerson/>
+              </Route>
+              <Route path="/RegistryArtesan">
+                <RegistryArtesan />
               </Route>
 
             </Switch>
