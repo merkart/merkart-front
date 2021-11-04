@@ -9,13 +9,25 @@ import {ProductSearch} from "./ProductSearch";
 
 function SearchBar() {
 
-  const [productos, setProductos]= useState();
-  const [tablaProductos, setTablaProductos]= useState();
+  const [productos, setProductos]= useState([]);
+  const [tablaProductos, setTablaProductos]= useState([]);
   const [busqueda, setBusqueda]= useState("");
   //setTablaProductos(productos);
 
+  const peticionGetAll=async()=>{
+    await axios.get("https://merkart.herokuapp.com/product" )
+        .then(response=>{
+          console.log(response,"hol")
+          setProductos(response.data);
+
+          setTablaProductos(response.data);
+        }).catch(error=>{
+          console.log(error);
+        })
+  }
 const peticionGet=async()=>{
-  await axios.get("https://merkart.herokuapp.com/product")
+    console.log(busqueda)
+  return await axios.get("https://merkart.herokuapp.com/name/search/"+busqueda )
   .then(response=>{
     console.log(response,"hol")
     setProductos(response.data);
@@ -26,26 +38,46 @@ const peticionGet=async()=>{
   })
 }
 const handleChange=e=>{
+e.persist()
+  console.log(e)
   console.log(e.target.value)
-    setBusqueda(e.target.value);
-    filtrar(e.target.value);
+  //console.log(e.target.value)
+    //setBusqueda(e.target.value);
+  console.log(e)
+  console.log(busqueda)
+  peticionGet()
+    //filtrar(e.target.value);
   }
   
   const filtrar=(terminoBusqueda)=>{
-  console.log(productos)
-    var resultadosBusqueda=tablaProductos.filter((elemento)=>{
+    console.log(terminoBusqueda)
+  console.log(productos);
+  console.log(peticionGet())
+    var resultadosBusqueda=  peticionGet().then(res=> {
+      console.log("res",res)
+      setProductos(res)
+    });
+    /*var resultadosBusqueda=tablaProductos.filter((elemento)=>{
       console.log(elemento)
+      console.log(elemento.name)
+      console.log(elemento.category)
+
       if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-      || elemento.Category.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      || elemento.category.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       ){
         return elemento;
       }
-    });
-    setProductos(resultadosBusqueda);
+    }
+    );*/
+    setProductos(resultadosBusqueda)
+    return resultadosBusqueda;
+    ;
   }
+
   
   useEffect(()=>{
-  peticionGet();
+    peticionGetAll();
+
   },[])
   
     return (
@@ -55,7 +87,7 @@ const handleChange=e=>{
             className="form-control inputBuscar"
             value={busqueda}
             placeholder="Búsqueda por Nombre o Empresa"
-            onChange={handleChange}
+            onChange={(event)=>handleChange(event)}
           />
 
           <button className="btn btn-success">
