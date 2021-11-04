@@ -13,7 +13,7 @@ export const ProductSearch = ({productitem}) => {
     const [artisan,setArtisan] = useState({
         name:"nicolas torres"
     })
-    console.log(productitem.name,'asdasd')
+
     return (
 
         <div className={"d-flex justify-content-center mt-5"}>
