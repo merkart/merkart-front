@@ -11,6 +11,7 @@ import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
 
 import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
+import {Home} from "./Home/pages/Home";
 
 import {SearchPage} from "./search/SearchPage";
 import Login from "./Login/Login";
@@ -27,8 +28,13 @@ function App() {
         <Router>
           <div>
             <Switch>
+
+              <Route path="/Home">
+                <Home   />
+
               <Route path="/">
                 <Login/>
+
               </Route>
               <Route path="/carrito/:id">
                 <ShoppingCart   />
