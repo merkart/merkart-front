@@ -2,14 +2,16 @@
     height: 100%;
     align-content: center;
 }
-.cuadrado {
+/*.cuadrado {
     height: 450px;
     margin-top: 100px;
     margin-bottom: auto;
     width: 400px;
-    border: #e2c275;
-    background-color:#c36a2d;
-}
+    border: blue;
+    /*border: #e2c275;
+    /*background-color:linear-gradient(to right, #EF962D, #9C5518);
+    background-color: blue;
+}*/
 .Logo{
     background-image: url("Logo.jpeg");
     background-size: 100px;
@@ -21,18 +23,19 @@
     margin-top: 20px;
     margin-left: 150px;
 }
-.Titulo1 {
+/*.Titulo1 {
     margin-top: 20px;
     color: #e2c275;
     font: oblique bold 150% cursive
-}
+}*/
 
-h3{
+/*h3{
     margin-top: 20px;
     font-size: 20px;
-    color: #e2c275;
+    color: blue;
+    /*color: #e2c275;
     margin-left:100px;
-}
+}*/
 .Email{
     margin-left: 100px;
     margin-top: 20px;
@@ -45,13 +48,13 @@ h3{
     margin-left: 100px;
 }
 .BotonRegistro{
-    color: #e2c275;
+    color: #5A3F11;
     margin-top: 10px;
     margin-left: 10px;
     font: oblique bold 110% cursive
 }
 .BotonInicio{
-    color: #e2c275;
+    color: #5A3F11;
     margin-left: 10px;
     margin-top: 10px;
     font: oblique bold 110% cursive

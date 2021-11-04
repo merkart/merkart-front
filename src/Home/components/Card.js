@@ -20,12 +20,12 @@ render(){
                     <div className="card.body">
                         <div className="row center">
                             <div className="col-6">
-                                <Link to="/categorias">
+                                <Link to="/Categories">
                                     <img src={category} className="img float-right"/>
                                 </Link>
                             </div>
                                 <div className="col-6 Market-Card-Info"  >
-                                <Link to="/categorias">
+                                <Link to="/Categories">
                                     <h1>Categorias</h1>
                                 </Link>
                                     <p>Aquí encontraras todos los productos ordenados por categoría</p>

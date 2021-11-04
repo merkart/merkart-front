@@ -1,4 +1,10 @@
+
+import "./RegistryArtesan.scss"
+import ciclesImg from '../Home/assets/img/circles.png'
+import {registroA, Row, Col} from 'react-bootstrap';
+
 import "./RegistryArtesan.css"
+
 import {Button, Card, Form} from 'react-bootstrap';
 import {TypeOfId} from "../components/artisanProfile/TypeOfId";
 import {CountryDropdown, RegionDropdown} from "react-country-region-selector";
@@ -6,6 +12,7 @@ import React, {useState} from "react";
 import axios from "axios";
 
 export const RegistroArtesano = ({}) => {
+
     const [artisan, setArtisan] = useState({
         idNumber:"",
         email:"",
@@ -41,11 +48,14 @@ export const RegistroArtesano = ({}) => {
             .then(window.location.reload)
     }
 
+
     return (
         <registroA>
             <div className="container">
                 <div className="d-flex justify-content-center h-100">
-                    <div className="cuadrado">
+                    <div className="cuadradoRegArt" style={{
+                        backgroundImage:`url(${ciclesImg}), linear-gradient(to right, #EF962D, #9C5518)`
+                        }}>
                         <div className="Logo">
                         </div>
                         <div className="Titulo1">
@@ -58,19 +68,26 @@ export const RegistroArtesano = ({}) => {
                                 <center>Cuentanos más sobre ti</center>
                             </p>
                         </div>
-                        <Card>
+
+
+
+
+                        <Card className="cardReg" style={{
+                            backgroundImage:`url(${ciclesImg}), linear-gradient(to right, #EF962D, #9C5518)`
+                        }}>
                             <Form onSubmit={addNewArtisan}>
-                                <Form.Group className="m-3" controlId="productName">
-                                    <Form.Control placeholder="Tipo de identificacion" type="text" name="typeOfId" id="typeOfId" onChange={handleTextChange}/>
-                                </Form.Group>
-                                <TypeOfId/>
+                                
+                                <TypeOfId className="TipoID"/>
+
                                 <Form.Group className="m-3" controlId="numberId">
                                     <Form.Control placeholder="Numero de Identificacion" type="text" name="idNumber" id="idNumber" onChange={handleTextChange}/>
                                 </Form.Group>
                                 <Form.Group className="m-3" controlId="phone">
                                     <Form.Control placeholder="Celular" type="text" name="phone" id="phone" onChange={handleTextChange}/>
                                 </Form.Group>
-                                <div>
+
+                                <div className="selectCountry">
+
                                     <CountryDropdown className="country-select-dropdown "
                                                      value={artisan.country}
                                                      onChange={(val) => selectCountry(val)}/>
@@ -89,7 +106,9 @@ export const RegistroArtesano = ({}) => {
                         </Card>
                         <div>
                             <div className="BotonContinuar">
-                                <Button className={"generic-button-1 m-3"} variant="primary" type="submit">
+
+                                <Button className={"generic-button-1 m-3 "} style={{background:`#5A3F11`}} variant="primary" type="submit" >
+
                                     Registrarse
                                 </Button>
                             </div>

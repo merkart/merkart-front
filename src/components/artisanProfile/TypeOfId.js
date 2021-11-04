@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import {Dropdown} from "react-bootstrap";
 
+import "../../RegistryArtesan/RegistryArtesan.scss"
+
+
 export const TypeOfId = (props) => {
 
     const [type, setType] = useState([
@@ -23,8 +26,10 @@ export const TypeOfId = (props) => {
     ])
 
     const [dropdownSelect, setDropdownSelect] = useState({
-            name: 'Seleccione su tipo de identificacion',
-            description: 'Seleccione su tipo de identificacion'
+
+            name: 'Seleccione el tipo de ID',
+            description: 'Seleccione el tipo de ID'
+
         }
     )
 
@@ -35,7 +40,9 @@ export const TypeOfId = (props) => {
     return (
         <div>
             <Dropdown className="m-3">
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+
+                <Dropdown.Toggle  variant="light " id="dropdown-basic"/*style={{background:`White`}}*/>
+
                     {dropdownSelect.name}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>

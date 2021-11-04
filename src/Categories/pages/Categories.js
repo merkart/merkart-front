@@ -7,16 +7,14 @@ import Card  from '../components/Card'
 
 
 
-export const Home = () => {
+export const Categories = () => {
     return (
         <div>
             <NavBar/>
+            <Sentence/>
             <div>
-                <Sentence/>
                 <Card/>
             </div>
-            
-            
         </div>
     )
 }

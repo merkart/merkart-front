@@ -13,7 +13,11 @@ import {SearchPage} from "./search/SearchPage";
 import Login from "./Login/Login";
 import RegistryPerson from "./RegistryPerson/RegistryPerson";
 import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
+
+import { Categories } from "./Categories/pages/Categories";
+
 import {EditArtisanProfile} from "./components/artisanProfile/EditArtisanProfile";
+
 
 
 function App() {
@@ -27,6 +31,29 @@ function App() {
               <Route path="/Home">
                 <Home/>
               </Route>
+              <Route path="/Categories">
+                <Categories/>
+              </Route>
+
+              <Route path="/Bolsos">
+                <Bolsos/>
+              </Route>
+              <Route path="/Sombreros">
+                <Sombreros/>
+              </Route>
+              <Route path="/Canastos">
+                <Canastos/>
+              </Route>
+              <Route path="/Accesorios">
+                <Accesorios/>
+              </Route>
+              <Route path="/VasijasYEsculturas">
+                <VasijasYEsculturas/>
+              </Route>
+              <Route path="/Otros">
+                <Otros/>
+              </Route>
+
               <Route path="/carrito/:id">
                 <ShoppingCart/>
               </Route>
@@ -72,22 +99,23 @@ function App() {
       </div>
   );
 }
-function Carrito() {
-  return <h2>carrito</h2>;
+function Bolsos() {
+  return <h2>Bolsos: Bolsos coloridos, de todos los tamaños</h2>;
 }
-
-function Historial() {
-  return <h2>historial</h2>;
+function Sombreros() {
+  return <h2>Sombreros: Sombreros elegantes y de alta calidad</h2>;
 }
-
-function Categorias() {
-  return <h2>Categorias</h2>;
+function Canastos() {
+  return <h2>Canastos: Canastos para cuaquier uso</h2>;
 }
-function Historias() {
-  return <h2>Historias</h2>;
+function Accesorios() {
+  return <h2>Accesorios: Llaveros, collares, aretes, pulseras y más</h2>;
 }
-function Recomendaciones() {
-  return <h2>Recomendaciones</h2>;
+function VasijasYEsculturas() {
+  return <h2>Vasijas Y Esculturas: Dale estilo a tu hogar con las mejores obras</h2>;
+}
+function Otros() {
+  return <h2>Mas Categorias futuras</h2>;
 }
 
 
