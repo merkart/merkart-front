@@ -1,14 +1,17 @@
 .container{
     height: 100%;
     align-content: center;
+    padding-bottom: 50px;
 }
-.cuadrado {
+.cuadradoRegArt {
     height: 970px;
     margin-top: 40px;
     margin-bottom: auto;
     width: 400px;
     border: #e2c275;
-    background-color:#c36a2d;
+    background-color:linear-gradient(to right, #EF962D, #9C5518);
+    opacity: 0.85;
+    
 }
 .Logo{
     background-image: url("Logo.jpeg");
@@ -21,13 +24,11 @@
     margin-top: 05px;
     margin-left: 150px;
 }
-.Titulo1 {
+/*.Titulo1 {
     color: #e2c275;
     font: oblique bold 140% cursive
+}*/
 
-
-
-}
 .Subtitulo{
     color: black;
     margin-left: 20px;
@@ -36,13 +37,13 @@
 
 }
 
-h3{
+/*h3{
     font: oblique bold 100% cursive ;
     margin-top: 20px;
     font-size: 15px;
     color: #e2c275;
     margin-left:120px;
-}
+}*/
 
 .TipoDeId{
     color-font:blue;
@@ -51,7 +52,7 @@ h3{
     margin-top: 10px;
 }
 option, select{
-    color: #e2c275;
+    color: #5A3F11;
 }
 .NumeroId{
     margin-left: 120px;
@@ -85,12 +86,12 @@ option, select{
     margin-top: 10px;
 
 }
-::placeholder {
-    color: #e2c275;
-}
+/*::placeholder {
+    color: #5A3F11;
+}*/
 
 .BotonContinuar{
-    color: #e2c275;
+    color: #5A3F11;
     margin-top: 10px;
     margin-left: 80px;
     font: oblique bold 110% cursive

@@ -1,5 +1,6 @@
 import {Navbar, Nav, Container, NavDropdown, Button, Offcanvas} from 'react-bootstrap';
 import {Link, Route} from "react-router-dom";
+import lineasImg from '../Home/assets/img/lineasArt.png'
 import "./styles.scss"
 import SearchBar from "./SearchBar";
 export const NavBar = ()=>{
@@ -7,7 +8,7 @@ export const NavBar = ()=>{
 
     return(
         <>
-        <Navbar  fixed={"top"} className="nav-orange-bg"  expand="true">
+        <Navbar  fixed={"top"} className="nav-orange-pag"  expand="true" >
             <Container fluid >
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className={"order-0"} />
                 <Navbar.Offcanvas
@@ -28,7 +29,7 @@ export const NavBar = ()=>{
                         <SearchBar/>
 
                         <Nav.Link className="link-color" href="/">Home</Nav.Link>
-                        <Nav.Link className="link-color" href="/carrito">carrito de compras</Nav.Link>
+                        <Nav.Link className="link-color" href="/carrito">Carrito de compras</Nav.Link>
                         <Nav.Link className="link-color" href="/historial">Historial</Nav.Link>
                         <Nav.Link className="link-color" href="/categorias">Categorias</Nav.Link>
                         <Nav.Link  className="link-color" href="/historias">Historias</Nav.Link>

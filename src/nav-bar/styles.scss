@@ -1,8 +1,17 @@
 .body {
 
 }
+.nav-orange-pag {
+    /*background-color: rgb(255, 136, 0) !important;*/
+    background: url('../Home/assets/img/lineasArt.png'),repeat linear-gradient(to right, #EF962D, #9C5518)!important;
+    /*opacity: 0.85;*/
+}
+
+
 .nav-orange-bg {
-    background-color: rgb(255, 136, 0) !important;
+    background: linear-gradient(to right, #EF962D, #9C5518) !important;
+    /*background: url('../Home/assets/img/lineasArt.png'), linear-gradient(to right, #EF962D, #9C5518)!important;*/
+    opacity: 0.85 ;
 }
 .logo {
     background-image: url("MerkartLogo.jpeg");

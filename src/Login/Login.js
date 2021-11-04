@@ -1,4 +1,5 @@
-import "./Login.css"
+import "./Login.scss"
+import ciclesImg from '../Home/assets/img/circles.png'
 import {login, Container, NavDropdown, Button, Offcanvas, Row, Col} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import {useState} from "react";
@@ -30,14 +31,16 @@ export const Login=({}) => {
         <login>
             <div className="container">
                 <div className="d-flex justify-content-center h-100">
-                    <div className="cuadrado">
+                    <div className="cuadrado" style={{
+                        backgroundImage:`url(${ciclesImg}), linear-gradient(to right, #EF962D, #9C5518)`
+                        }}>
                         <div className="Logo">
                         </div>
                         <div className="Titulo1">
                             <p className="Titulo1"><center>Bienvenidos</center></p>
                         </div>
                         <h3>Ingrese su usuario:</h3>
-                        <div className="Email">
+                        <div className="Email" style={{color: "#5A3F11"}}>
                             <input type="text" onChange={hanldeEmailChanhe} placeholder="Email" />
                         </div>
                         <h3>Ingrese su contraseña:</h3>

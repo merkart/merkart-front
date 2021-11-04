@@ -1,4 +1,5 @@
-import "./RegistryArtesan.css"
+import "./RegistryArtesan.scss"
+import ciclesImg from '../Home/assets/img/circles.png'
 import {registroA, Row, Col} from 'react-bootstrap';
 
 export const RegistroArtesano = ({}) => {
@@ -6,7 +7,9 @@ export const RegistroArtesano = ({}) => {
         <registroA>
             <div className="container">
                 <div className="d-flex justify-content-center h-100">
-                    <div className="cuadrado">
+                    <div className="cuadradoRegArt" style={{
+                        backgroundImage:`url(${ciclesImg}), linear-gradient(to right, #EF962D, #9C5518)`
+                        }}>
                         <div className="Logo">
                         </div>
                         <div className="Titulo1">

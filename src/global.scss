@@ -39,3 +39,34 @@
   border: grey;
   border-radius: 5px;
 }
+
+.cuadrado {
+  height: 450px;
+  margin-top: 100px;
+  margin-bottom: auto;
+  width: 400px;
+  /*border: blue;*/
+  border: #e2c275;
+  background-color:linear-gradient(to right, #EF962D, #9C5518);
+  /*background-color: blue;*/
+  opacity: 0.85;
+}
+
+.Titulo1 {
+  margin-top: 10px;
+  color: #5A3F11;
+  font: oblique bold 130% cursive
+
+}
+
+h3{
+  margin-top: 20px;
+  font-size: 20px;
+  /*color: blue;*/
+  color: #5A3F11;
+  margin-left:100px;
+}
+
+::placeholder {
+  color: #5A3F11;
+}
