@@ -9,10 +9,20 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
+
 import CreateProduct from "./components/create_product/CreateProduct";
 import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
 import {TotalProduct} from "./components/total_product/TotalProduct";
 import {UserRegistry} from "./components/user_registry/UserRegistry";
+
+import {Home} from "./Home/pages/Home";
+
+import {SearchPage} from "./search/SearchPage";
+import Login from "./Login/Login";
+import RegistryPerson from "./RegistryPerson/RegistryPerson";
+import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
+
+
 
 function App() {
 
@@ -20,12 +30,17 @@ function App() {
   return (
      // <Store>
       <div>
-
         <Router>
           <div>
-
-
             <Switch>
+
+              <Route path="/Home">
+                <Home   />
+
+              <Route path="/">
+                <Login/>
+
+              </Route>
               <Route path="/carrito/:id">
                 <ShoppingCart/>
               </Route>
@@ -47,12 +62,25 @@ function App() {
               <Route path="/payment">
                 <Payment />
               </Route>
+
               <Route path="/product/:id">
                 <TotalProduct/>
               </Route>
               <Route path="/user/:id">
                 <UserRegistry/>
               </Route>
+
+              <Route path="/searchpage">
+                <SearchPage />
+              </Route>
+              <Route path="/Registry">
+                <RegistryPerson/>
+              </Route>
+              <Route path="/RegistryArtesan">
+                <RegistryArtesan />
+              </Route>
+
+
             </Switch>
           </div>
         </Router>
