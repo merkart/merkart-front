@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import {RegistroPersona} from "./RegistroPersona/RegistroPersona";
+import {RegistroArtesano} from "./RegistroArtesano/RegistroArtesano";
 
 function App() {
 
@@ -16,8 +16,8 @@ function App() {
         <Router>
           <div>
             <Switch>
-              <Route path="/RegistroPersona">
-                <RegistroPersona />
+              <Route path="/RegistroArtesano">
+                <RegistroArtesano />
               </Route>
             </Switch>
           </div>
