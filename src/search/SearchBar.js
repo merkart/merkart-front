@@ -62,7 +62,7 @@ function SearchBar() {
     }, [])
 
     return (
-        <div className="App">
+        <div className="">
             <div className="containerInput">
                 <input
                     className="form-control inputBuscar"
@@ -76,8 +76,8 @@ function SearchBar() {
                 </button>
             </div>
 
-            <div className="table-responsive">
-                shoppingcart
+
+
                 {productos && productos.map((product) => {
 
                     return (<ProductSearch productitem={product}/>)
@@ -85,7 +85,6 @@ function SearchBar() {
                 })}
 
 
-            </div>
         </div>
     );
 }

@@ -5,17 +5,24 @@ import {Button, Col, Card, Form, Navbar} from "react-bootstrap";
 import ReactPlayer from 'react-player'
 import {NavBar} from "../../nav-bar/NavBar";
 import Row from "react-bootstrap/Row";
+import {useHistory} from "react-router-dom";
 
 const CreateProduct = (props) => {
-
+    const history = useHistory();
     const [product, setProduct] = useState(
         {
             productName: 'Manilla de colores',
             description: 'Una manilla de colores',
             cost: '5000',
-            quantity: '4',
+            quantity: '1',
             urlImage: '',
-            urlVideo: ''
+            urlVideo: '',
+            artisanId: '1',
+            placeOfCreation: '',
+            Category: '',
+            isSelected: false,
+            createdAt: ""
+
         }
     )
 
@@ -39,6 +46,24 @@ const CreateProduct = (props) => {
             [event.target.name]: URL.createObjectURL(event.target.files[0])
         })
     }
+    const handleSubmit = (event) => {
+        axios.post({
+                method: 'post',
+                url: " https://merkart.herokuapp.com/product/insert/" + product.artisanId,
+                headers: {},
+                data: {
+                    productDto: product, // This is the body part
+                }
+            }
+        )
+            .then(response => {
+                history.push('/')
+
+                return response;
+            }).catch(error => {
+            console.log(error);
+        })
+    }
 
     const addNewProduct = (event) => {
         event.preventDefault();
@@ -55,17 +80,18 @@ const CreateProduct = (props) => {
                 <Col></Col>
                 <Col className="mt-0">
                     <Card className="mt-3" style={{width: '40rem'}}>
-                        <Form onSubmit={addNewProduct}>
+                        <Form onSubmit={handleSubmit}>
                             <Form.Group className="m-3" controlId="productName">
                                 <Form.Label>¿Cómo se llama tu producto?</Form.Label>
-                                <Form.Control type="text" name="productName" id="productName" onChange={handleTextChange}/>
+                                <Form.Control type="text" name="productName" id="productName"
+                                              onChange={handleTextChange}/>
                             </Form.Group>
                             <CategorySelect/>
                             <Form.Group className="m-3" controlId="description">
                                 <Form.Label>Descripción del producto</Form.Label>
                                 <Form.Control type="textarea" name="description"
                                               placeholder="Describe tu producto"
-                                                onChange={handleTextChange}/>
+                                              onChange={handleTextChange}/>
                             </Form.Group>
                             <Form.Group className="m-3" controlId="cost">
                                 <Form.Label>Costo</Form.Label>
@@ -85,7 +111,8 @@ const CreateProduct = (props) => {
                                 <Form.Control type="text" name="urlVideo" onChange={handleTextChange}/>
                             </Form.Group>
                             <ReactPlayer className="m-3" url={product.urlVideo} width="600"/>
-                            <Button className={"generic-button-1 m-3"} variant="primary" type="submit">
+                            <Button onSubmit={handleSubmit()} className={"generic-button-1 m-3"} variant="primary"
+                                    type="submit">
                                 Crear
                             </Button>
                         </Form>
