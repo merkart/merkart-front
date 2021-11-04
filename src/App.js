@@ -9,8 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {NavBar} from "./nav-bar/NavBar";
 import {Payment} from "./payment/Payment";
-import CreateProduct from "./components/CreateProduct";
+import CreateProduct from "./components/create_product/CreateProduct";
 import {ShoppingCart} from "./ShoppingCart/ShoppingCart";
+import {TotalProduct} from "./components/total_product/TotalProduct";
+import {UserRegistry} from "./components/user_registry/UserRegistry";
 
 function App() {
 
@@ -44,6 +46,12 @@ function App() {
               </Route>
               <Route path="/payment">
                 <Payment />
+              </Route>
+              <Route path="/product/:id">
+                <TotalProduct/>
+              </Route>
+              <Route path="/user/:id">
+                <UserRegistry/>
               </Route>
             </Switch>
           </div>

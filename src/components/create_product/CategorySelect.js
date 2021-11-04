@@ -26,7 +26,7 @@ export const CategorySelect = (props) => {
 
     return (
         <div>
-            <Dropdown>
+            <Dropdown className="m-3">
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                     {dropdownSelect.name}
                 </Dropdown.Toggle>
