@@ -23,8 +23,8 @@ export const TypeOfId = (props) => {
     ])
 
     const [dropdownSelect, setDropdownSelect] = useState({
-            name: 'Seleccione una Categoria',
-            description: 'Seleccione una Categoria'
+            name: 'Seleccione su tipo de identificacion',
+            description: 'Seleccione su tipo de identificacion'
         }
     )
 
