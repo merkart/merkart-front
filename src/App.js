@@ -26,6 +26,7 @@ function App() {
   return (
       <div>
         <Router>
+
           <div>
             <Switch>
               <Route path="/Home">
@@ -78,7 +79,7 @@ function App() {
               <Route path="/product/:id">
                 <TotalProduct/>
               </Route>
-              <Route path="/searchpage">
+              <Route path="/searchpage/:find?">
                 <SearchPage />
               </Route>
               <Route path="/Registry">

@@ -3,7 +3,7 @@ import "./RegistryArtesan.scss"
 import ciclesImg from '../Home/assets/img/circles.png'
 import {registroA, Row, Col} from 'react-bootstrap';
 
-import "./RegistryArtesan.css"
+import "./RegistryArtesan.scss"
 
 import {Button, Card, Form} from 'react-bootstrap';
 import {TypeOfId} from "../components/artisanProfile/TypeOfId";
