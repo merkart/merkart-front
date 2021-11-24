@@ -17,6 +17,7 @@ import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
 import { Categories } from "./Categories/pages/Categories";
 
 import {EditArtisanProfile} from "./components/artisanProfile/EditArtisanProfile";
+import Store from "./store/Store";
 
 
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
       <div>
+        <Store>
         <Router>
 
           <div>
@@ -97,6 +99,7 @@ function App() {
             </Switch>
           </div>
         </Router>
+        </Store>
       </div>
   );
 }

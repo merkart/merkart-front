@@ -8,21 +8,31 @@ import "./RegistryArtesan.scss"
 import {Button, Card, Form} from 'react-bootstrap';
 import {TypeOfId} from "../components/artisanProfile/TypeOfId";
 import {CountryDropdown, RegionDropdown} from "react-country-region-selector";
-import React, {useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import axios from "axios";
+import {StoreContext} from '../store/Store';
+
 
 export const RegistroArtesano = ({}) => {
+    let [user, dispatch] = useContext(StoreContext);
 
+    const correo= user.payload.Correo;
+    const password= user.payload.Contraseña;
+    const rol= user.payload.Rol;
     const [artisan, setArtisan] = useState({
         idNumber:"",
         email:"",
-        username:"",
+        name:"",
+        lastName:"",
         password:"",
-        rol:"",
+        role:"",
         typeOfId:"",
         country:"",
-        phone:""
+        phone:"",
+        url:""
     })
+
+
 
     const handleTextChange = (event) => {
         const value = event.target.value;
@@ -40,15 +50,32 @@ export const RegistroArtesano = ({}) => {
     const selectRegion = (val) => {
         setArtisan({...artisan,region: val});
     }
-
-    const addNewArtisan = (event) => {
-        event.preventDefault();
+    const peticion = ()=>{
         axios.post('http://localhost:8080/product', {artisan})
             .then((response) => response)
             .then(window.location.reload)
     }
+    let addNewArtisan = (event) => {
+        event.preventDefault();
+        //setArtisan((artisan)=>({...artisan,email:correo}))
+        console.log(artisan)
+        axios.post('http://localhost:8080/product', {artisan})
+            .then((response) => response)
+            .then(window.location.reload)
+    }
+    const mountedRef = useRef(true)
+    useEffect(() => {
+        //peticion();
+        setArtisan((artisan)=>({...artisan,email:correo}))
+        setArtisan((artisan)=>({...artisan,password: password}))
+        setArtisan((artisan)=>({...artisan,role: rol}))
+        console.log(user.payload.Correo,'correin',user)
 
+        console.log(artisan)
 
+        //return mountedRef.current = false
+
+    }, [user])
     return (
         <registroA>
             <div className="container">
@@ -86,33 +113,36 @@ export const RegistroArtesano = ({}) => {
                                     <Form.Control placeholder="Celular" type="text" name="phone" id="phone" onChange={handleTextChange}/>
                                 </Form.Group>
 
-                                <div className="selectCountry">
+                                <div className="selectCountry" >
 
                                     <CountryDropdown className="country-select-dropdown "
                                                      value={artisan.country}
+                                                     name={"country"}
                                                      onChange={(val) => selectCountry(val)}/>
                                     <RegionDropdown className="country-select-dropdown"
                                                     country={artisan.country}
                                                     value={artisan.region}
+                                                    name={"country"}
                                                     onChange={(val) => selectRegion(val)}/>
                                 </div>
                                 <Form.Group className="m-3" controlId="address">
-                                    <Form.Control placeholder="Direccion" type="text" name="address" id="address" onChange={handleTextChange}/>
+                                    <Form.Control  placeholder="Direccion" type="text" name="address" id="address" onChange={handleTextChange}/>
                                 </Form.Group>
                                 <Form.Group className="m-3" controlId="description">
                                     <Form.Control placeholder="Descripcion" type="textarea" value={artisan.description} name="description" id="description" onChange={handleTextChange}/>
                                 </Form.Group>
+                                <div>
+                                    <div className="BotonContinuar">
+
+                                        <Button className={"generic-button-1 m-3 "} style={{background:`#5A3F11`}} variant="primary" type="submit" >
+
+                                            Registrarse
+                                        </Button>
+                                    </div>
+                                </div>
                             </Form>
                         </Card>
-                        <div>
-                            <div className="BotonContinuar">
 
-                                <Button className={"generic-button-1 m-3 "} style={{background:`#5A3F11`}} variant="primary" type="submit" >
-
-                                    Registrarse
-                                </Button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
