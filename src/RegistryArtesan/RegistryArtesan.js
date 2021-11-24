@@ -11,6 +11,7 @@ import {CountryDropdown, RegionDropdown} from "react-country-region-selector";
 import React, {useContext, useEffect, useRef, useState} from "react";
 import axios from "axios";
 import {StoreContext} from '../store/Store';
+import {useHistory} from "react-router-dom";
 
 
 export const RegistroArtesano = ({}) => {
@@ -29,9 +30,11 @@ export const RegistroArtesano = ({}) => {
         typeOfId:"",
         country:"",
         phone:"",
-        url:""
+        url:"",
+        productList:[
+        ]
     })
-
+    const history = useHistory()
 
 
     const handleTextChange = (event) => {
@@ -50,18 +53,33 @@ export const RegistroArtesano = ({}) => {
     const selectRegion = (val) => {
         setArtisan({...artisan,region: val});
     }
-    const peticion = ()=>{
-        axios.post('http://localhost:8080/product', {artisan})
-            .then((response) => response)
-            .then(window.location.reload)
+    const handleSubmit = (event) => {
+
     }
     let addNewArtisan = (event) => {
         event.preventDefault();
         //setArtisan((artisan)=>({...artisan,email:correo}))
         console.log(artisan)
-        axios.post('http://localhost:8080/product', {artisan})
-            .then((response) => response)
-            .then(window.location.reload)
+        axios.post({
+                method: 'post',
+                url: "https://merkart.herokuapp.com/artisan" ,
+                headers: {},
+                data: {
+                    artisanDto: artisan
+                }
+            }
+        ).then(response => {
+                console.log(response)
+                history.push({
+                    pathname: "/Home"
+                })
+                //return response;
+            }).catch(error => {
+            console.log(error);
+        })
+        /*axios.post('', {artisan})
+            .then((response) => console.log(response,'respuestica'))
+            .then()*/
     }
     const mountedRef = useRef(true)
     useEffect(() => {
