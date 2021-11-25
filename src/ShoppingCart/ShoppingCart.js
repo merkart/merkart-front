@@ -41,7 +41,7 @@ export const ShoppingCart = () => {
         <div>
             <NavBar/>
             <div className="content-app">
-                shoppingcart
+
                 {cart.map((product)=>{
                     console.log("product",product)
                     return( <Product productitem={product} />)
