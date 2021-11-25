@@ -29,8 +29,8 @@ export const NavBar = ()=>{
                         <SearchBar/>
 
                         <Nav.Link className="link-color" href="/">Home</Nav.Link>
-                        <Nav.Link className="link-color" href="/carrito">Carrito de compras</Nav.Link>
-                        <Nav.Link className="link-color" href="/historial">Historial</Nav.Link>
+                        <Nav.Link className="link-color" href="/carrito/1">Carrito de compras</Nav.Link>
+                        <Nav.Link className="link-color" href="/historial/1">Historial</Nav.Link>
                         <Nav.Link className="link-color" href="/categorias">Categorias</Nav.Link>
                         <Nav.Link  className="link-color" href="/historias">Historias</Nav.Link>
                         <Nav.Link  className="link-color" href="/recomendaciones">Recomendaciones</Nav.Link>

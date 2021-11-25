@@ -17,6 +17,7 @@ import RegistryArtesan from "./RegistryArtesan/RegistryArtesan";
 import { Categories } from "./Categories/pages/Categories";
 
 import {EditArtisanProfile} from "./components/artisanProfile/EditArtisanProfile";
+import Store from "./store/Store";
 
 
 
@@ -25,7 +26,9 @@ function App() {
 
   return (
       <div>
+        <Store>
         <Router>
+
           <div>
             <Switch>
               <Route path="/Home">
@@ -78,7 +81,7 @@ function App() {
               <Route path="/product/:id">
                 <TotalProduct/>
               </Route>
-              <Route path="/searchpage">
+              <Route path="/searchpage/:find?">
                 <SearchPage />
               </Route>
               <Route path="/Registry">
@@ -96,6 +99,7 @@ function App() {
             </Switch>
           </div>
         </Router>
+        </Store>
       </div>
   );
 }

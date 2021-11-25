@@ -7,11 +7,11 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {ProductSearch} from "./ProductSearch";
 
 
-function SearchBar() {
+function SearchBar({search}) {
 
     const [productos, setProductos] = useState([]);
     const [tablaProductos, setTablaProductos] = useState([]);
-    const [busqueda, setBusqueda] = useState("");
+    const [busqueda, setBusqueda] = useState(search);
 
     const mountedRef = useRef(true)
     const peticionGetAll = async () => {
@@ -53,9 +53,14 @@ function SearchBar() {
         return peticionGetAll()
     }
 
-
+    //
     useEffect(() => {
         peticionGetAll();
+        console.log(busqueda,'busqueda')
+        function handleStatusChange(busqueda) {
+            filtrar(busqueda)
+        }
+        handleStatusChange(busqueda)
 
         return mountedRef.current = false
 
