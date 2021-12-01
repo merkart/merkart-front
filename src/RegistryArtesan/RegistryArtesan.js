@@ -60,15 +60,9 @@ export const RegistroArtesano = ({}) => {
         event.preventDefault();
         //setArtisan((artisan)=>({...artisan,email:correo}))
         console.log(artisan)
-        axios.post({
-                method: 'post',
-                url: "https://merkart.herokuapp.com/artisan" ,
-                headers: {},
-                data: {
-                    artisanDto: artisan
-                }
-            }
-        ).then(response => {
+
+        axios.post('https://merkart.herokuapp.com/artisan'
+            ,artisan).then(response => {
                 console.log(response)
                 history.push({
                     pathname: "/Home"

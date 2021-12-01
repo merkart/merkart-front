@@ -5,6 +5,7 @@ import "../global.scss"
 import "./cart.scss"
 import {useState} from "react";
 import {Product} from "../product/Product";
+import {useHistory} from "react-router-dom";
 
 export const ShoppingCart = () => {
     const [cart,setCart] = useState([{
@@ -36,12 +37,19 @@ export const ShoppingCart = () => {
         quantity:"2",
         Category:"otroitems2"
     }]);
+    const history = useHistory();
+    const goPage = ()=>{
+        history.push({
+                pathname: "/payment"
+            }
+        )
+    }
     return (
 
         <div>
             <NavBar/>
             <div className="content-app">
-
+                <Button onClick={()=>{goPage()}}> CHECKOUT</Button>
                 {cart.map((product)=>{
                     console.log("product",product)
                     return( <Product productitem={product} />)

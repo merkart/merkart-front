@@ -31,7 +31,7 @@ export const NavBar = ()=>{
                         <Nav.Link className="link-color" href="/">Home</Nav.Link>
                         <Nav.Link className="link-color" href="/carrito/1">Carrito de compras</Nav.Link>
                         <Nav.Link className="link-color" href="/historial/1">Historial</Nav.Link>
-                        <Nav.Link className="link-color" href="/categorias">Categorias</Nav.Link>
+                        {/*<Nav.Link className="link-color" href="/categorias">Categorias</Nav.Link>*/}
                         <Nav.Link  className="link-color" href="/historias">Historias</Nav.Link>
                         <Nav.Link  className="link-color" href="/recomendaciones">Recomendaciones</Nav.Link>
                         <NavDropdown.Divider className={"col-9"}/>
@@ -39,7 +39,7 @@ export const NavBar = ()=>{
 
                     </Nav>
                 </Navbar.Offcanvas>
-                <Navbar.Brand href="/" className={"order-1 ml-1"}><Button className="logo" ></Button></Navbar.Brand>
+                <Navbar.Brand href="/Home" className={"order-1 ml-1"}><Button className="logo" ></Button></Navbar.Brand>
 
 
                 <Button className="order-2 " variant="link">
