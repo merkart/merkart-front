@@ -1,0 +1,62 @@
+.container{
+    height: 100%;
+    align-content: center;
+}
+/*.cuadrado {
+    height: 450px;
+    margin-top: 100px;
+    margin-bottom: auto;
+    width: 400px;
+    border: blue;
+    /*border: #e2c275;
+    /*background-color:linear-gradient(to right, #EF962D, #9C5518);
+    background-color: blue;
+}*/
+.Logo{
+    background-image: url("Logo.jpeg");
+    background-size: 100px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    color:  #e2c275;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+/*.Titulo1 {
+    margin-top: 20px;
+    color: #e2c275;
+    font: oblique bold 150% cursive
+}*/
+
+/*h3{
+    margin-top: 20px;
+    font-size: 20px;
+    color: blue;
+    /*color: #e2c275;
+    margin-left:100px;
+}*/
+.Email{
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.Contraseña{
+    margin-left:100px;
+    margin-top: 10px;
+}
+.Olvido {
+    margin-left: 100px;
+}
+.BotonRegistro{
+    color: #5A3F11;
+    margin-top: 10px;
+    margin-left: 10px;
+    font: oblique bold 110% cursive
+}
+.BotonInicio{
+    color: #5A3F11;
+    margin-left: 10px;
+    margin-top: 10px;
+    font: oblique bold 110% cursive
+
+}

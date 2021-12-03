@@ -1,0 +1,32 @@
+.text{
+    margin-top: 125px;
+    margin-bottom: -250px;
+    margin-left: auto;
+    margin-right:auto ;
+    font-size: 12px;
+    text-align: center;
+    z-index: 2;
+}
+
+.CategoriesText{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 125px;
+    float: top;
+}
+
+.Task-User-Info h1{
+    margin-top: -9.5px;
+    margin-bottom: 9.5px;
+    position:relative;
+    font-size: 25px;
+    color: #e2c275;
+    background: linear-gradient(to right, #EF962D, #9C5518) !important;
+}
+.Task-User-Info p{
+    margin-top: -10px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    color:#e2c275;
+    background: linear-gradient(to right, #EF962D, #9C5518) !important;
+}

@@ -1,0 +1,114 @@
+.container{
+    height: 100%;
+    align-content: center;
+    padding-bottom: 50px;
+}
+
+
+.cuadradoRegArt {
+    height: 710px;
+    margin-top: 40px;
+    margin-bottom: auto;
+    width: 400px;
+    border: #e2c275;
+    background-color:linear-gradient(to right, #EF962D, #9C5518);
+    opacity: 0.85;
+    
+}
+
+.selectCountry{
+    margin-left: 15px;    
+}
+
+
+.TipoID{
+    background-color: white;
+    color: #5A3F11;
+}
+
+.cardReg{
+    /*margin-top: auto;*/
+    background-color:linear-gradient(to right, #EF962D, #9C5518);
+}
+
+.Logo{
+    background-image: url("Logo.jpeg");
+    background-size: 100px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    color:  #e2c275;
+    border-radius: 100px;
+    margin-top: 40px;
+    margin-left: 150px;
+}
+/*.Titulo1 {
+    color: #e2c275;
+    font: oblique bold 140% cursive
+}*/
+
+.Subtitulo{
+    color: black;
+    margin-left: 20px;
+    font-size: 10px;
+    font: oblique bold 100% cursive
+
+}
+
+/*h3{
+    font: oblique bold 100% cursive ;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #e2c275;
+    margin-left:120px;
+}*/
+
+.TipoDeId{
+    border: #c36a2d;
+    margin-left: 120px;
+    margin-top: 10px;
+}
+
+option, select{
+    color: #5A3F11;
+}
+.NumeroId{
+    margin-left: 120px;
+    margin-top: 20px;
+}
+.NumeroTel{
+    margin-left:120px;
+    margin-top: 10px;
+}
+.Pais{
+    margin-left:120px;
+    margin-top: 10px;
+
+}
+.Cuidad{
+    margin-left:120px;
+    margin-top: 10px;
+}
+.Dirección{
+    margin-left:120px;
+    margin-top: 10px;
+}
+
+.Dirección{
+    margin-left:120px;
+    margin-top: 10px;
+}
+.Descripción{
+    margin-left:120px;
+    margin-top: 10px;
+}
+/*::placeholder {
+    color: #5A3F11;
+}*/
+
+.BotonContinuar{
+    color: #5A3F11;
+    margin-top: 10px;
+    margin-left: 80px;
+    font: oblique bold 110% cursive
+}

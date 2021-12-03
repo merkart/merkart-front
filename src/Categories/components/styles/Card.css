@@ -1,0 +1,60 @@
+
+.card {
+    /*padding-top:350px ;*/
+    margin-top: 350px;
+    border: none;
+    border-radius: 8px;
+    /*background: url('../../assets/img/circles.png') no-repeat, linear-gradient(to right, #EF962D, #9C5518);*/
+}
+.Market-User-Info {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 200px;
+}
+.Market-Card-Top {
+    margin-top: 350px;
+    max-height: auto;
+    min-height: 150px;
+    max-width: 770px;
+    opacity: 0.85;
+}
+.Market-Card {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-height: auto;
+    min-height: 150px;
+    max-width: 770px;
+    opacity: 0.85;
+}
+.Market-Card-Bottom{
+    margin-bottom: 100px;
+    margin-top:auto;
+    max-height: auto;
+    min-height: 150px;
+    max-width: 770px;
+    opacity: 0.85;
+} 
+.Market-Card-Info {
+    padding-left: 0;
+    padding-right: 45px;
+}
+.Market-Card-Info h1{
+    margin-left: -85px;
+    text-align: right;
+    padding-top: 40px;
+    padding-left: 150px;
+    font-size: 35px;
+    color: #E2C275;
+}
+.Market-Card-Info p{
+    padding-top: 15px;
+    text-align: right;
+    font-size: 17px;
+    color: #E2C275;;
+}
+
+.img{
+    padding: 10px;
+    height: 200px; 
+    border-radius: 10px;
+}
