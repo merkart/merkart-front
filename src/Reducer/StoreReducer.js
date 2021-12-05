@@ -3,6 +3,7 @@ export const types={
 }
 const initialStore = {
     user: [{}],
+    registered:{"nicolas@gmail.com":"nicolas@gmail.com"}
 
 };
 const StoreReducer = (state, action) => {
@@ -15,7 +16,7 @@ const StoreReducer = (state, action) => {
 
             }
         default:
-            return state;
+            return {...action};
     }
 };
 export {initialStore}

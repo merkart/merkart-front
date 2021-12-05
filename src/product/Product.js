@@ -13,14 +13,14 @@ export const Product = ({productitem}) => {
     const [artisan,setArtisan] = useState({
         name:"nicolas torres"
     })
-    console.log(productitem.name,'asdasd')
+    console.log(productitem,'asdasd',product)
     return (
 
         <div className={"d-flex justify-content-center mt-5"}>
             <Card style={{width: '60%', height:"25%" }}>
                 <Row>
                     <Col>
-                        <Card.Img variant="top" className={"photo"} src={productitem.img} />
+                        <Card.Img variant="top" className={"photo"} src={productitem.urlImage} />
 
                     </Col>
                     <Col>

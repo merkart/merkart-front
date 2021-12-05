@@ -21,7 +21,7 @@ export const RegistryPerson = ({}) => {
     let handleSubmit= (e)=>{
         e.preventDefault();
         console.log("asd",state)
-        if(state.Rol === "Artesano"){
+        if(state.Rol === "ARTISAN"){
              dispatch({
                 type:types.saveTask,
                 payload:state,
@@ -32,11 +32,11 @@ export const RegistryPerson = ({}) => {
                 pathname: "/RegistryArtesan"
             })
         }
-        if(state.Rol === "Comprador"){
+        if(state.Rol === "CLIENT"){
             /*push axios */
-            /*history.push({
+            history.push({
                 pathname: "/"
-            })*/
+            })
         }
 
     }
@@ -87,8 +87,8 @@ export const RegistryPerson = ({}) => {
                                 <h3>Escoja su Rol :</h3>
                                 <div className="Rol">
                                     <select  onChange={(event)=>{handleChange(event)}} name="Rol">
-                                        <option value="Artesano">Artesano</option>
-                                        <option value="Comprador">Comprador</option>
+                                        <option value="ARTISAN">Artesano</option>
+                                        <option value="CLIENT">Comprador</option>
                                     </select>
                                 </div>
                                 <Row>

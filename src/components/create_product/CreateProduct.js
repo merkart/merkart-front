@@ -7,6 +7,7 @@ import {NavBar} from "../../nav-bar/NavBar";
 import Row from "react-bootstrap/Row";
 import {useHistory} from "react-router-dom";
 
+
 const CreateProduct = (props) => {
     const history = useHistory();
     const [product, setProduct] = useState(
@@ -55,10 +56,21 @@ const CreateProduct = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        console.log(product,'prod')
+        //debugger
+        axios.post('https://merkart.herokuapp.com/artisan/product/insert/'+product.artisanId
+            , product).then(response => {
+            console.log(response)
+            history.push({
+                pathname: "/Home"
+            })
+            //return response;
+        }).catch(error => {
+            console.log(error);
+        })
        // console.log(productin,'productins',product)
-        axios.post('https://merkart.herokuapp.com/artisan/product/insert/\'+product.artisanId'
-            ,product)
+        /*axios.post('https://merkart.herokuapp.com/artisan/product/insert/'+product.artisanId
+            ,product)*/
          /*axios({ method: 'post',
             url: 'https://merkart.herokuapp.com/artisan/product/insert/'+product.artisanId,
             data: {
@@ -71,14 +83,14 @@ const CreateProduct = (props) => {
          })*/
 
 
-            .then(response => {
+            /*.then(response => {
                 console.log(response)
                 history.push('/')
 
                 return response;
             }).catch(error => {
             console.log(error);
-        })
+        })*/
     }
 
     const addNewProduct = (event) => {
@@ -87,8 +99,24 @@ const CreateProduct = (props) => {
             .then((response) => response)
             .then(window.location.reload)
     }
+const parseImage = (e)=>{
+    let file = e.target.files[0];
+    if (file) {
+        const read = new FileReader();
+        console.log(this,"this")
+        read.onload = handleReaderLoaded(file);
+        read.readAsBinaryString(file);
 
-
+    }
+}
+    const handleReaderLoaded = (readerEvt)=>{
+        let binaryString = readerEvt.target.result;
+        console.log(binaryString)
+        debugger
+        setProduct({
+            ...product,urlImage:btoa(binaryString)
+        })
+    }
     return (
         <div>
             <NavBar/>
@@ -119,8 +147,18 @@ const CreateProduct = (props) => {
                             </Form.Group>
                             <Form.Group className="m-3" controlId="urlImage">
                                 <Form.Label>Url Imagen:</Form.Label>
-                                <Form.Control type="file" name="urlImage" onChange={handleImageChange}/>
-                                <img className="mt-3" src={product.urlImage} alt="urlImage" width="600"/>
+                                {/*<input type={"file"}
+                                    name={"image"}
+                                       id={"file"}
+                                       accept={".jpeg,.png,.jpg"} onChange={(event)=>{parseImage(event)}}
+                                    />*/}
+
+                                <Form.Control type="text" name="urlImage" onChange={handleTextChange}/>
+                               {/* <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
+AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+    9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />*/}
+                                {/*<Form.Control type="file" name="urlImage" onChange={handleImageChange}/>*/}
+                                {/*<img className="mt-3" src={product.urlImage} alt="urlImage" width="600"/>*/}
                             </Form.Group>
                             <Form.Group className="m-3" controlId="urlVideo">
                                 <Form.Label>Url Video:</Form.Label>

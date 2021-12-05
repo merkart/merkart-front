@@ -1,11 +1,15 @@
 import {Navbar, Nav, Container, NavDropdown, Button, Offcanvas} from 'react-bootstrap';
-import {Link, Route} from "react-router-dom";
+import {Link, Route, useHistory} from "react-router-dom";
 import lineasImg from '../Home/assets/img/lineasArt.png'
 import "./styles.scss"
 import SearchBar from "./SearchBar";
 export const NavBar = ()=>{
-
-
+    const history = useHistory()
+    const routeChange=(route)=>{
+        history.push({
+            pathname:route
+        })
+    }
     return(
         <>
         <Navbar  fixed={"top"} className="nav-orange-pag"  expand="true" >
@@ -27,15 +31,16 @@ export const NavBar = ()=>{
                     </NavDropdown>*/}
                     <Nav className="me-auto mx-5">
                         <SearchBar/>
-
-                        <Nav.Link className="link-color" href="/">Home</Nav.Link>
-                        <Nav.Link className="link-color" href="/carrito/1">Carrito de compras</Nav.Link>
-                        <Nav.Link className="link-color" href="/historial/1">Historial</Nav.Link>
+                        <Nav.Link className="link-color" onClick={()=>{routeChange("/searchpage")}} >productos</Nav.Link>
+                        <Nav.Link className="link-color" onClick={()=>{routeChange("/")}}>Home</Nav.Link>
+                        <Nav.Link className="link-color" onClick={()=>{routeChange("/carrito/1")}} >Carrito de compras</Nav.Link>
+                        <Nav.Link className="link-color" onClick={()=>{routeChange("/historial/1")}} >Historial</Nav.Link>
                         {/*<Nav.Link className="link-color" href="/categorias">Categorias</Nav.Link>*/}
-                        <Nav.Link  className="link-color" href="/historias">Historias</Nav.Link>
-                        <Nav.Link  className="link-color" href="/recomendaciones">Recomendaciones</Nav.Link>
+                        <Nav.Link  className="link-color" onClick={()=>{routeChange("/historias")}} >Historias</Nav.Link>
+                        <Nav.Link  className="link-color" onClick={()=>{routeChange("/recomendaciones")}}>Recomendaciones</Nav.Link>
+                        <Nav.Link  className="link-color" onClick={()=>{routeChange("/crearProducto")}} >ingresar producto</Nav.Link>
                         <NavDropdown.Divider className={"col-9"}/>
-                        <Nav.Link className="link-color" href="#link">Cerrar Sesion</Nav.Link>
+                        <Nav.Link className="link-color"  onClick={()=>{routeChange("/")}}>Cerrar Sesion</Nav.Link>
 
                     </Nav>
                 </Navbar.Offcanvas>

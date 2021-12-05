@@ -60,12 +60,79 @@ export const RegistroArtesano = ({}) => {
         event.preventDefault();
         //setArtisan((artisan)=>({...artisan,email:correo}))
         console.log(artisan)
+        if(!user.registered){
+            user["registered"]={}
+        }
+        if(user.registered){
+            console.log('entra',user)
+            const cart = user.registered;
+
+            if(artisan.email in user.registered){
+                console.log("ya existe no se vuelve a agregar")
+
+            }
+
+            if(!(artisan.email in user.registered)){
+                console.log('no existe')
+                dispatch({...user,[artisan.email]:{
+
+
+                    idNumber:artisan.idNumber,
+                        email:artisan.email,
+
+                        name: artisan.name,
+
+                        lastName:artisan.lastName,
+
+                        password: artisan.password,
+
+                        role:artisan.role,
+
+                        typeOfId:artisan.typeOfId,
+
+                        country:artisan.country,
+
+                        phone:artisan.phone,
+
+                        url:artisan.url,
+
+                        productList:artisan.productList,
+
+                        address:artisan.address,
+
+                        description:artisan.description,
+
+
+                }})
+                //user.registered[artisan.email]=
+            }
+
+            console.log("sale")
+            //setQuantity(product.quantity)
+            /* console.log(cart,product,Array.prototype.push.apply(cart, [product]))
+             console.log(cart)*/
+            //Array.prototype.push.apply(cart, moreVegs);
+            //dispatch({...user,cart:Array.prototype.push.apply(cart, [product])})
+
+        }
+        /*console.log('sale2')
+        user["registered"]={}
+        user.registered[artisan.email]={
+            artisan
+
+        }*/
+        /*dispatch({...user,registered:{
+                [artisan.email]:{
+                    artisan
+                }
+
+            }})*/
 
         axios.post('https://merkart.herokuapp.com/artisan'
             ,artisan).then(response => {
                 console.log(response)
                 history.push({
-                    pathname: "/Home"
+                    pathname: "/"
                 })
                 //return response;
             }).catch(error => {
@@ -74,6 +141,11 @@ export const RegistroArtesano = ({}) => {
         /*axios.post('', {artisan})
             .then((response) => console.log(response,'respuestica'))
             .then()*/
+    }
+
+    const setUserRegistry = ()=>{
+
+
     }
     const mountedRef = useRef(true)
     useEffect(() => {

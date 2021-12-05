@@ -7,6 +7,7 @@ import {useState} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {useHistory} from "react-router-dom";
+import ciclesImg from "../Categories/assets/img/circles.png";
 
 
 export const ProductSearch = ({productitem}) => {
@@ -25,13 +26,17 @@ export const ProductSearch = ({productitem}) => {
     }
     return (
 
-        <div className={"d-flex justify-content-center mt-5"}>
+        <div className={"d-flex justify-content-center "}>
 
-                <Card style={{width: '60%', height:"25%" }}>
+                <Card className=" noHeigth mx-auto"
+                      style={{
+                          backgroundImage:`url(${ciclesImg}), linear-gradient(to right, #EF962D, #9C5518)`,
+                          maxWidth :"800px",minWidth:'800px'
+                      }} >
                     <Button onClick={()=>{goProduct()}} variant="light">
                     <Row>
                         <Col>
-                            <Card.Img variant="top" className={"photo"} src={productitem.img} />
+                            <Card.Img variant="top" className={"photo"} src={productitem.urlImage} />
 
                         </Col>
                         <Col>
